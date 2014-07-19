@@ -1,0 +1,81 @@
+body {
+  background-color: #F8F8F8;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  margin: 15px;
+}
+
+label {
+  display: inline-block;
+  font-weight: bold;
+}
+
+output {
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+}
+
+input {
+  text-align: center;
+  border: solid 1px rgba(128, 128, 128, 0.5);
+}
+
+.header label, .header output, .header input {
+  color: #444;
+  font-weight: bold;
+}
+
+.header input {
+  border: solid 1px transparent;
+  background: none;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 10em;
+}
+
+input[type="number"] {
+  width: 3em;
+}
+
+#basics label {
+  width: 10em;
+}
+
+#ability_scores label {
+  width: 10em;
+}
+
+#ability_scores output {
+  width: 5em;
+}
+
+#ability_scores output.mod {
+  width: 3em;
+}
+
+#ability_scores input {
+  width: 3em;
+}
+
+#skills input.ability {
+  width: 3em;
+}
+
+#skills output {
+  width: 3em;
+}
+
+#feats {
+  columns: 2;
+}
+
+#feats div {
+  width: 45%;
+}
+
+#feats div input {
+  display: block;
+}

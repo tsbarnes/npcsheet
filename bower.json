@@ -1,0 +1,16 @@
+{
+  "name": "NPCSheet",
+  "description": "App to handle NPC sheets for PFRPG.",
+  "homepage": "",
+  "keywords": [
+    "npc",
+    "characters",
+    "rpg"
+  ],
+  "author": "T. Scott Barnes <barnes.t.scott@gmail.com>",
+  "private": true,
+  "dependencies": {
+    "jquery": "components/jquery#2.1.1",
+    "angular": "angular/bower-angular#1.2.20"
+  }
+}

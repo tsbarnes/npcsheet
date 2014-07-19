@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html ng-app="NPCSheet" ng-csp>
+<head>
+  <title>NPCSheet</title>
+
+  <link rel="stylesheet" href="bower_components/angular/angular-csp.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body>
+  <h1>NPC Sheet</h1>
+  <form ng-controller="SheetCtrl">
+    <fieldset id="basics">
+      <legend>Basics</legend>
+      <div>
+        <label for="name_field">Name:</label>
+        <input id="name_field" ng-model="name" placeholder="Name">
+      </div>
+      <div>
+        <label for="race_field">Race:</label>
+        <input id="race_field" ng-model="race" placeholder="Race">
+      </div>
+    </fieldset>
+    <fieldset id="classes">
+      <legend>Classes</legend>
+      <div class="header">
+        <input type="text" disabled="true" value="Class Name">
+        <input type="text" disabled="true" value="Level">
+      </div>
+      <div ng-repeat="cclass in classes">
+        <input type="text" ng-model="cclass.name" placeholder="Class name">
+        <input type="number" ng-model="cclass.level" placeholder="Level">
+      </div>
+    </fieldset>
+    <fieldset id="ability_scores">
+      <legend>Ability Scores</legend>
+      <div class="header">
+        <label>Ability</label>
+        <output>Total</output>
+        [<output class="mod">Mod</output>] =
+        <input type="text" disabled="true" value="Base"> +
+        <input type="text" disabled="true" value="Misc">
+      </div>
+      <div ng-repeat="ability in ability_scores">
+        <label>{{ability.slug}}</label>
+        <output>{{abilityScoreTotal(ability.slug)}}</output>
+        [<output class="mod">{{abilityScoreModifier(ability.slug)}}</output>] =
+        <input type="number" ng-model="ability.base" placeholder="Base"> +
+        <input type="number" ng-model="ability.misc" placeholder="Misc">
+      </div>
+    </fieldset>
+    <fieldset id="skills">
+      <legend>Skills</legend>
+      <div class="header">
+        <input type="text" disabled="true" value="Skill Name">
+        (<input class="ability" type="text" disabled="true" value="Ability">)
+        <output>Total</output> =
+        <input class="ability" type="text" disabled="true" value="Ranks"> +
+        <output>Ability</output>
+      </div>
+      <div ng-repeat="skill in skills">
+        <input type="text" ng-model="skill.name" placeholder="Skill name">
+        (<input class="ability" type="text" ng-model="skill.ability_score" placeholder="Abi">)
+        <output>{{skillTotal(skill)}}</output> =
+        <input type="number" ng-model="skill.ranks" placeholder="Ranks"> +
+        <output>{{abilityScoreModifier(skill.ability_score)}}</output>
+      </div>
+    </fieldset>
+    <fieldset id="feats">
+      <legend>Feats</legend>
+      <div ng-repeat="feat in feats">
+        <input type="text" ng-model="feat.name" placeholder="Feat name">
+        <textarea ng-model="feat.description"></textarea>
+      </div>
+    </fieldset>
+  </form>
+</body>
+</html>
