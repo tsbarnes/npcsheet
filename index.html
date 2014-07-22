@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 
-<html ng-app="NPCSheet" ng-csp>
+<html lang="en" ng-app="NPCSheet" ng-csp>
 <head>
   <title>NPCSheet</title>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
   <link rel="stylesheet" href="bower_components/angular/angular-csp.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
   <link rel="stylesheet" href="css/styles.css">
 
   <script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
   <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 </head>
 
 <body>
-  <h1>NPC Sheet</h1>
-  <form ng-controller="SheetCtrl">
-    <fieldset id="basics">
+  <form ng-controller="SheetCtrl" class="container-fluid">
+    <h1>NPC Sheet</h1>
+    <fieldset id="basics" class="col-md-6 col-xs-12">
       <legend>Basics</legend>
       <div>
         <label for="name_field">Name:</label>
@@ -26,7 +31,7 @@
         <input id="race_field" ng-model="race" placeholder="Race">
       </div>
     </fieldset>
-    <fieldset id="classes">
+    <fieldset id="classes" class="col-md-6 col-xs-12">
       <legend>Classes</legend>
       <div class="header">
         <input type="text" disabled="true" value="Class Name">
@@ -37,7 +42,7 @@
         <input type="number" ng-model="cclass.level" placeholder="Level">
       </div>
     </fieldset>
-    <fieldset id="ability_scores">
+    <fieldset id="ability_scores" class="col-md-6 col-xs-12">
       <legend>Ability Scores</legend>
       <div class="header">
         <label>Ability</label>
@@ -54,7 +59,7 @@
         <input type="number" ng-model="ability.misc" placeholder="Misc">
       </div>
     </fieldset>
-    <fieldset id="skills">
+    <fieldset id="skills" class="col-md-6 col-xs-12">
       <legend>Skills</legend>
       <div class="header">
         <input type="text" disabled="true" value="Skill Name">
@@ -71,7 +76,7 @@
         <output>{{abilityScoreModifier(skill.ability_score)}}</output>
       </div>
     </fieldset>
-    <fieldset id="feats">
+    <fieldset id="feats" class="col-md-6 col-xs-12">
       <legend>Feats</legend>
       <div ng-repeat="feat in feats">
         <input type="text" ng-model="feat.name" placeholder="Feat name">

@@ -10,7 +10,8 @@
   "author": "T. Scott Barnes <barnes.t.scott@gmail.com>",
   "private": true,
   "dependencies": {
-    "jquery": "components/jquery#2.1.1",
-    "angular": "angular/bower-angular#1.2.20"
+    "jquery": "components/jquery#~2.1.1",
+    "angular": "angular/bower-angular#~1.2.20",
+    "bootstrap": "twbs/bootstrap#~3.2.0"
   }
 }
